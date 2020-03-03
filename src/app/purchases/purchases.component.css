@@ -1,0 +1,22 @@
+:host {             
+
+    display: block;
+    left: 0;
+}
+.paginationDiv{
+    display: flex;
+    height: 10%;
+}
+.pagination{
+    display: block;
+    width: 5%;
+    height: 100%;
+    margin-right: 2%;
+}
+
+.active{
+    background-color: blue;
+}
+.inactive{
+    background-color: grey;
+}

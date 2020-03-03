@@ -1,0 +1,5 @@
+<div class = "formDiv">
+    <input type="text" placeholder="enter your email" [(ngModel)]="email"  class ="input">
+    <input type = "text" placeholder = "enter your password" [(ngModel)]="password" class ="input">
+    <input type = 'submit' (click)="authorizate(email,password) " (click)="email =''; password = ''"  class = 'submit'>
+</div>
