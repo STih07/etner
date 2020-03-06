@@ -7,7 +7,6 @@ import { HttpClientModule ,HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 import { Routes, RouterModule } from '@angular/router';
-import { Intercept } from './authInterceptor';
 import { AuthorizationComponent } from './modules/auth/components/authComponent/authorization.component';
 import { AuthModule } from './modules/auth/auth.module';
 import { PurchasesComponent } from './modules/purchases/components/purchases/purchases.component';
@@ -15,6 +14,7 @@ import { PurchasesService } from './modules/purchases/components/services/purcha
 import { PurchaseComponent } from './modules/purchases/components/puchase/puchase.component';
 import { PurchasesGuard } from './modules/guards/purchases.guard';
 import { PurchasesModule } from './modules/purchases/components/purchases.module';
+import { Intercept } from './aut.interceptor';
 
 
 
