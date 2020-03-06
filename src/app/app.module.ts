@@ -3,15 +3,18 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthorithationComponent } from './authorithation/authorithation.component';
-import { AuthorithationService } from './authorithation.service';
 import { HttpClientModule ,HTTP_INTERCEPTORS } from '@angular/common/http';
-import { PurchasesService } from './purchases.service';
-import { Intercept } from './interceptor';
-import { AuthorizationComponent } from './authorization/authorization.component';
-import { PurchasesComponent } from './purchases/purchases.component';
-import { PurchaseComponent } from './puchase/puchase.component';
+
+
 import { Routes, RouterModule } from '@angular/router';
+import { Intercept } from './authInterceptor';
+import { AuthorizationComponent } from './modules/auth/components/authComponent/authorization.component';
+import { AuthModule } from './modules/auth/auth.module';
+import { PurchasesComponent } from './modules/purchases/components/purchases/purchases.component';
+import { PurchasesService } from './modules/purchases/components/services/purchases.service';
+import { PurchaseComponent } from './modules/purchases/components/puchase/puchase.component';
+import { PurchasesModule } from './modules/purchases/components/purchases.module';
+import { PurchasesGuard } from './modules/purchases/purchases.guard';
 
 
 const routes : Routes = [
@@ -20,27 +23,24 @@ const routes : Routes = [
     pathMatch: 'full'
     }  ,
     { path: 'auth', component: AuthorizationComponent},
-    { path: 'purchases', component: PurchasesComponent},
+    { path: 'purchases', component: PurchasesComponent ,  canActivate: [PurchasesGuard]},
     { path: 'purchase/:id', component: PurchaseComponent }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    AuthorithationComponent,
-    AuthorizationComponent,
-    PurchasesComponent,
-    PurchaseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule ,
-    RouterModule.forRoot(routes)
+    PurchasesModule,
+    RouterModule.forRoot(routes),
+    AuthModule
   ],
   providers: [
-  AuthorithationService,
   PurchasesService  ,
   {
     provide: HTTP_INTERCEPTORS,

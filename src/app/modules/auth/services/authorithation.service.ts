@@ -20,6 +20,7 @@ export class AuthorithationService  {
     if(token){
       return token
     }
+    else{ return null}
   } 
   logOut(){
     this.storage.removeItem("accesToken")

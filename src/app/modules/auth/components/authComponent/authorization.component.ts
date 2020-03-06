@@ -4,9 +4,11 @@ import { from } from 'rxjs/internal/observable/from';
 import { of } from 'rxjs';
 import { catchError, switchMap, tap, map, switchMapTo} from 'rxjs/operators';
 
-import { AuthorithationService } from '../authorithation.service';
-import { PurchasesService } from '../purchases.service';
+
 import { Router } from '@angular/router';
+import { AuthorithationService } from '../../services/authorithation.service';
+import { PurchasesService } from 'src/app/modules/purchases/components/services/purchases.service';
+
 
 @Component({
   selector: 'app-authorization',

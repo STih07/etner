@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthorithationService } from './authorithation.service';
+
 import { from } from 'rxjs/internal/observable/from';
 import { of } from 'rxjs';
 import { catchError, switchMap, tap, map, switchMapTo} from 'rxjs/operators';
-import { PurchasesService } from './purchases.service';
+
 import { HttpParams, HttpHeaders } from '@angular/common/http';
+import { AuthorithationService } from './modules/auth/services/authorithation.service';
+
 
 switchMap
 @Component({
