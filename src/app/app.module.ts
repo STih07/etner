@@ -13,8 +13,10 @@ import { AuthModule } from './modules/auth/auth.module';
 import { PurchasesComponent } from './modules/purchases/components/purchases/purchases.component';
 import { PurchasesService } from './modules/purchases/components/services/purchases.service';
 import { PurchaseComponent } from './modules/purchases/components/puchase/puchase.component';
+import { PurchasesGuard } from './modules/guards/purchases.guard';
 import { PurchasesModule } from './modules/purchases/components/purchases.module';
-import { PurchasesGuard } from './modules/purchases/purchases.guard';
+
+
 
 
 const routes : Routes = [
